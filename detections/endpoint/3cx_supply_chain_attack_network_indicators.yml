@@ -1,10 +1,10 @@
-name: 3CX Supply Chain Attack Network Indicators
+name: 3CX供应链攻击网络指标
 id: 791b727c-deec-4fbe-a732-756131b3c5a1
 version: 1
 date: "2023-03-30"
 author: Michael Haag, Splunk
 type: TTP
-status: experimental
+status: 实验性的
 data_source: []
 description: The analytic provided below employs the Network_Resolution datamodel to detect domain indicators associated with the 3CX supply chain attack. By leveraging this query, you can efficiently conduct retrospective analysis of your data to uncover potential compromises.
 search: '| tstats `security_content_summariesonly` values(DNS.answer) as IPs min(_time) as firstTime from datamodel=Network_Resolution by DNS.src, DNS.query
